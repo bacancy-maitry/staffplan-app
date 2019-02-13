@@ -1,0 +1,24 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+const mainRoutes: Routes = [
+  {
+    path: 'authentication',
+    loadChildren: './authentication/authentication.module#AuthenticationModule',
+  },
+  {
+    path: 'home',
+    loadChildren: './main/main.module#MainModule',
+  }
+]
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(mainRoutes)
+  ],
+  exports: [
+    RouterModule
+  ],
+  declarations: []
+})
+export class AppRoutingModule { }
