@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const mainRoutes: Routes = [
   {
-    path: 'authentication',
+    path: '',
     loadChildren: './authentication/authentication.module#AuthenticationModule',
   },
   {
     path: 'home',
     loadChildren: './main/main.module#MainModule',
-  }
+  },
 ]
 
 @NgModule({

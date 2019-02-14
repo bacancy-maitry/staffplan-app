@@ -13,15 +13,21 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  @ViewChild('loginData') loginData : any;
+  @ViewChild('usernameInput') username: any;
 
-  loginUser(){
-    if(this.loginData.valid){
-      console.log(this.loginData.value);
-      this.router.navigateByUrl('/home');
+  usernameData: any;
+
+
+  loginUser(loginForm) {
+    if (loginForm.valid) {
+      console.log(loginForm.value);
+      // console.log(loginForm.value.username);
+      this.router.navigateByUrl('/home').then(() => {
+        console.log('Username is:::', this.username.value)
+        this.usernameData = this.username.value;
+      })
     }
-    else
-    {
+    else {
       window.alert("Invalid Username & Password");
     }
   }

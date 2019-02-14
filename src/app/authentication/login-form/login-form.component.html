@@ -1,32 +1,36 @@
-<h2>
-  StaffPlan
-</h2>
-
-<form #loginData="ngForm" (ngSubmit)="loginUser(usernameInput)">
-  <pre> {{ loginData.value | json }} </pre>
-  <div>
-    <input type="text" placeholder="Enter Username" name="username" #usernameInput="ngModel" ngModel required>
+<div class="main-div">
+  <div class="heading-div">
+    StaffPlan
   </div>
 
-  <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
-    <p *ngIf="usernameInput.errors.required"> Invalid Username </p>
-  </div>
+  <form novalidate #loginForm="ngForm" (ngSubmit)="loginForm.valid && loginUser(loginForm)">
+    <!-- <pre> {{ loginForm.value| json }} </pre> -->
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Enter Username" name="username" #usernameInput="ngModel"
+        ngModel required>
+    </div>
+    <div class="error-message-div" *ngIf="loginForm.submitted && usernameInput.invalid">
+      <div *ngIf="usernameInput.errors.required">Enter Username </div>
+    </div>
 
-  <div>
-    <input type="password" placeholder="Enter Password" name="password" #passwordInput="ngModel" ngModel required>
-  </div>
+    <div class="form-group">
+      <input class="form-control" type="password" placeholder="Enter Password" name="password" #passwordInput="ngModel"
+        ngModel required minlength="5">
+    </div>
+    <div class="error-message-div" *ngIf="loginForm.submitted && passwordInput.invalid">
+      <div *ngIf="passwordInput.errors.required"> Enter Password </div>
+      <div *ngIf="passwordInput.errors.minlength"> Password must be {{ passwordInput.errors.minlength.requiredLength }}
+        characters long </div>
+    </div>
 
-  <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
-    <p *ngIf="passwordInput.errors.required"> Invalid Password </p>
-  </div>
+    <div class="navigation-div">
+      <nav>
+        Forgot Password? <a routerLink="/forgotpassword"> Click Here </a>
+      </nav>
+    </div>
 
-  <div>
-    <button type="submit"> Login </button>
-  </div>
-</form>
-
-<br />
-<br />
-<nav>
-  Forgot Password? <a routerLink="/forgotpassword"> Click Here </a>
-</nav>
+    <div class="button-div">
+      <button type="submit" class="buttons"> Sign in </button>
+    </div>
+  </form>
+</div>
