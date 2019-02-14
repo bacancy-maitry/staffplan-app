@@ -7,15 +7,17 @@ body{
     width: 500px;
     height: auto;
     text-align: center;
-    background-color: lightgrey;
-    border: 1px solid black;  
+    border: 1px solid black;
 }
 
-.heading-div{
+.image-div{
     margin: 5%; 
-    color: navy;
-    font-size: 30px;
-    font-weight: bold;
+    margin-right: 40%;
+}
+
+.form-div{
+    display: block;
+    /* border: 1px solid black; */
 }
 
 .form-group{

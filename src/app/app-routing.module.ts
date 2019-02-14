@@ -7,7 +7,7 @@ const mainRoutes: Routes = [
     loadChildren: './authentication/authentication.module#AuthenticationModule',
   },
   {
-    path: 'home',
+    path: '',
     loadChildren: './main/main.module#MainModule',
   },
 ]

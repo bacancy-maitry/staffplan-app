@@ -1,7 +1,55 @@
-<p>
-  home works!
-</p>
+<div class="main-div">
+  <nav>
+    <li> <a class="nav-links" routerLink="/home"> <img src="assets/images/staffplanlogo.png" alt> </a> </li>
+    <ul class="topnav">
+      <li> <a class="nav-links" routerLink="/home" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}"> Home </a> </li>
 
-<nav>
-  <a routerLink="/authentication/login"> Logout </a>
-</nav>
+      <li class="dropdown">
+        <a class="nav-links dropbtn" routerLink="/project" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}"> Projects <span class="fa fa-caret-down"> </span> </a>
+
+        <div class="dropdown-content">
+          <div>
+            <a href="#">
+              <div> Project Log </div>
+              <div> View Project Details </div>
+            </a>
+            <span class="caret"></span>
+          </div>
+
+          <a href="#"> Project Teams </a>
+          <a href="#"> Quick Views </a>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a class="nav-links dropbtn" routerLink="/staff" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}"> Staff <span class="fa fa-caret-down"> </span> </a>
+
+        <div class="dropdown-content">
+          <a href="#"> Staff Log </a>
+          <a href="#"> Staff Assignment </a>
+          <a href="#"> Quick Views </a>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a class="nav-links dropbtn" routerLink="/quickviews" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}"> Quickviews <span class="fa fa-caret-down"> </span> </a>
+
+        <div class="dropdown-content">
+          <a href="#"> Next 90 Days </a>
+          <a href="#"> Unassigned Roles </a>
+          <a href="#"> Staff Timeline </a>
+        </div>
+      </li>
+
+      <li> <a class="nav-links" [routerLinkActive]="['active']" routerLink="/admin"
+          [routerLinkActiveOptions]="{exact: true}"> Admin </a> </li>
+
+      <li class="right"> <a [routerLinkActive]="['active']" routerLink="/authentication/login"
+          [routerLinkActiveOptions]="{exact: true}"> Logout </a> </li>
+    </ul>
+  </nav>
+</div>

@@ -5,9 +5,18 @@ import { HomeComponent } from './home/home.component';
 const mainRoutes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+  },
+  {
+    path: 'home',
     component: HomeComponent,
     pathMatch: 'full',
-  }
+  },
+  {
+    path: 'project',
+    component: HomeComponent,
+    pathMatch: 'full',
+  },
 ]
 
 @NgModule({
